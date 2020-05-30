@@ -4,15 +4,30 @@ Created on Fri May 29 14:35:24 2020
 
 @author: pc
 """
+#import pandas as pd
+#import matplotlib.pyplot as plt
+#dataset = pd.read_excel("Data_Science_Internship_Assignment-1.xlsx" , sheetname = "Data")
+#print(dataset.shape)
+#print(dataset.head(20))
+#print(dataset.info())
+#print(dataset.columns)
+#copydf = dataset.copy()
+#copydf =copydf.drop(['HQ REGION','HQ COUNTRY', 'HQ CITY'],axis = 1)
+#print(copydf["LAUNCH DATE"].str[:4])
+##copydf['LAUNCH DATE'] = copydf['LAUNCH DATE'].astype(int)
+##afterninetydf = copydf.filter(["LAUNCH DATE"]) 
 
 import pandas as pd
-#df = pd.read_csv('Book1.csv',sep=';')
-df = pd.read_excel("Data_Science_Internship_Assignment.xlsx" , sheetname = "Data")
+import matplotlib.pyplot as plt
+import numpy as np
 
+df = pd.read_excel("Data_Science_Internship_Assignment.xlsx" , sheetname = "Data")
 
 edu_list = ['school','university','academy','training','nursery','tuition','learning','education',
            'institute','institution']
 NGO_list = ['not-for-profit','non-profit','non-governmental']
+
+
 def edu(name):
     for keyword in edu_list:
         if keyword in str(name):
@@ -31,7 +46,7 @@ def select_year(date):
     return date
     
 df['university']=df.NAME.str.lower().apply(edu)
-df['govern_np']=df.NAME.str.lower().apply(NGO) | df.WEBSITE.str.contains(".gov")
+df['govern_np']=df.NAME.str.lower().apply(NGO) | df["TAGLINE"].str.lower().apply(NGO) | df["TAGS"].str.lower().apply(NGO) | df.WEBSITE.str.contains(".gov")
 df["year"]=df["LAUNCH DATE"].apply(select_year)
 df["mature_company"]=(df["year"]<1990)& ( ~df['university'])&( ~df['govern_np'])
 df["startsup"]=(df["year"]>=1990)& ( ~df['university'])&( ~df['govern_np'])
@@ -46,8 +61,6 @@ with pd.ExcelWriter("Data_Science_Internship_Assignment.xlsx", engine="openpyxl"
     df.to_excel(writer, sheet_name="Data", startrow=0, startcol=0)
     df_count.to_excel(writer, sheet_name="Count", startrow=0, startcol=0)
 
-import matplotlib.pyplot as plt
-import numpy as np
 
 print("Amount of companies according to their types:\n",df_count)
 
