@@ -18,13 +18,6 @@
 | Government/Non-profit  |  Governmental organisation and non-profit companies  |
 | Unclassified  |   |
 
-				
-          Type		                  Definition
-   Startups		            Companies founded after 1990, that are innovative and tech-orientated
-   Mature companies		    Established companies, founded before 1990
-   Universities/Schools		    Universities and schools
-   Government/Non-profit	    Governmental organisation and non-profit companies
-   Unclassified		
 
 - I created function for columns' condotions :
    1. the first function is 'edu': While this function is navigating in the "edu_list" I have prepared, it checks whether the words in this list are in the "NAME" column. I used this function to create the 'university' column with the 'apply' function defined in library of pandas.
