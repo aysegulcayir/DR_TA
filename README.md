@@ -8,6 +8,16 @@
 - I created keyword lists. I chose them from the data, to categorize companies.
 - Companies should be divided into five categories, adhering to the given definitions. So I created five company columns in my dataframe.
 - The goal of this task is to classify each entity into the following types:
+
+
+| Type  | Definition   |
+|:---|:---|
+|Startups   | Companies founded after 1990, that are innovative and tech-orientated  |
+|Mature companies   |Established companies, founded before 1990   |
+| Universities/Schools  |  Universities and schools  |
+| Government/Non-profit  |  Governmental organisation and non-profit companies  |
+| Unclassified  |   |
+
 				
           Type		                  Definition
    Startups		            Companies founded after 1990, that are innovative and tech-orientated
@@ -27,4 +37,4 @@
 - I printed on "Data" and "Count" sheets with "with pd.ExcelWriter" and "to_excel".
 - Finally, I used matplotlib library to show the amounts of the companies according to the types of them.
 
-##PART-2
+## PART-2
