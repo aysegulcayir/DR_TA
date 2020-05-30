@@ -31,3 +31,12 @@
 - Finally, I used matplotlib library to show the amounts of the companies according to the types of them.
 
 ## PART-2
+
+## Install 
+
+git clone https://github.com/aysegulcayir/DR_TA.git
+
+## Author
+
+Aysegul Cayir Aydar
+Data Scientist&Python Developer
