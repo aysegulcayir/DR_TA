@@ -1,6 +1,6 @@
 <h1 align="center"> dealroom.co  </h1>
 <h1 align="center"> .....Technical Assingment..... </h1>
-<img alt="screenshot" src="data_ss.png" />
+
 
 ## PART-1
 
@@ -30,7 +30,7 @@
 - For the "Count" sheet, I calculated the amount of each company type in the "TYPE" column with "value_counts".
 - I printed on "Data" and "Count" sheets with "with pd.ExcelWriter" and "to_excel".
 - Finally, I used matplotlib library to show the amounts of the companies according to the types of them.
-
+<img alt="screenshot" src="data_ss.png" />
 ## PART-2
 
 ## Install 
