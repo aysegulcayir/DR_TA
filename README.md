@@ -1,5 +1,6 @@
 <h1 align="center"> dealroom.co  </h1>
 <h1 align="center"> .....Technical Assingment..... </h1>
+<img alt="screenshot" src="data_ss.png" />
 
 ## PART-1
 
@@ -20,8 +21,8 @@
 
 
 - I created function for columns' condotions :
-   1. The first function - 'edu': While this function is navigating in the "edu_list" I have prepared, it checks whether the words in this list are in the "NAME" column. I used this function to create the 'university' column with the 'apply' function defined in library of pandas.
-   2. The second function - 'NGO': While this function is navigating in the "NGO_list" I have prepared, it checks whether the words in this list are in "NAME", "TAGLINE" and "TAGS" columns. I also used "df.WEBSITE.str.contains(".gov")" for looking to goverments' website. I used this function to create the "govern_np" column with the 'apply' function defined in library of pandas. 
+   1. The first function - 'find_edu': While this function is navigating in the "edu_list" I have prepared, it checks whether the words in this list are in the "NAME" column. I used this function to create the 'university' column with the 'apply' function defined in library of pandas.
+   2. The second function - 'find_gnp': While this function is navigating in the "gnp_list" I have prepared, it checks whether the words in this list are in "NAME", "TAGLINE" and "TAGS" columns. I also used "df.WEBSITE.str.contains(".gov")" for looking to goverments' website. I used this function to create the "govern_np" column with the 'apply' function defined in library of pandas. 
    3. The third function - 'select_year': This function is also to find Startups and Mature companies. It is for time condition. The function finds first for element of companies' date.
 
 - I modified the "TYPE" column with the columns I added.I used idxmax(axis=1) for inserting correct index. That is, I took the row of information in the columns I added and placed it on the row in the "TYPE" column.
