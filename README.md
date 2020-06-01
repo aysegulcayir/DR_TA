@@ -13,14 +13,14 @@
 
 | Type  | Definition   |
 |:---|:---|
-|Startups   | Companies founded after 1990, that are innovative and tech-orientated  |
+|Startups   | Companies founded after 1990, that are innovative and tech-oriented  |
 |Mature companies   |Established companies, founded before 1990   |
 | Universities/Schools  |  Universities and schools  |
 | Government/Non-profit  |  Governmental organisation and non-profit companies  |
 | Unclassified  |   |
 
 
-- I created function for columns' condotions :
+- I created following functions for each type:
    1. The first function - 'find_edu': While this function is navigating in the "edu_list" I have prepared, it checks whether the words in this list are in the "NAME" column. I used this function to create the 'university' column with the 'apply' function defined in library of pandas.
    2. The second function - 'find_gnp': While this function is navigating in the "gnp_list" I have prepared, it checks whether the words in this list are in "NAME", "TAGLINE" and "TAGS" columns. I also used "df.WEBSITE.str.contains(".gov")" for looking to goverments' website. I used this function to create the "govern_np" column with the 'apply' function defined in library of pandas. 
    3. The third function - 'select_year': This function is also to find Startups and Mature companies. It is for time condition. The function finds first for element of companies' date.
@@ -28,19 +28,20 @@
 - I modified the "TYPE" column with the columns I added.I used idxmax(axis=1) for inserting correct index. That is, I took the row of information in the columns I added and placed it on the row in the "TYPE" column.
 - I dropped the columns I added to keep the original version of the excel file.
 - For the "Count" sheet, I calculated the amount of each company type in the "TYPE" column with "value_counts".
-- I printed on "Data" and "Count" sheets with "with pd.ExcelWriter" and "to_excel".
+- I overwrote "Data" and "Count" sheets with "with pd.ExcelWriter" and "to_excel".
 - Finally, I used matplotlib library to show the amounts of the companies according to the types of them.
 
 <img alt="screenshot" src="data_ss.png" />
 
-- Annotation : Supervised NLP machine learning algorithms could be used for these data and instructions. It could give more accurate results. I wanted to solve this way because my time is limited. 
+- Annotation : Supervised NLP machine learning algorithms could be used for these data and instructions. It could give more accurate results. However, doing so would require a large amount of labeled training data, which I did not have. 
 
 ## PART-2
 
-- I imported the necessary libraries
-- I scrapped the data
-- I converted the data to json format and made a dataframe
-- I loaded excel file, removed sheets to be updated, overwrite the file 
+Following steps have been applied in given order:
+- Importing the libraries (`requests`)
+- Inspecting the website source code to identify data sources
+- Querying data sources and receiving data in json format and creating a dataframe
+- Loading the excel file, removing the sheets to be updated, overwriting the file.
 
 ## Install 
 
