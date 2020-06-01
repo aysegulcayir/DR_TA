@@ -4,7 +4,7 @@
 
 ## PART-1
 
-- Firstly, I tried to understand the data/file via some methods in the commented area.
+- Firstly, I tried to understand the data/file via some methods such as info(), head(), describe().
 - Then, I read the data and created a dataframe.
 - I created keyword lists. I chose them from the data, to categorize companies.
 - Companies should be divided into five categories, adhering to the given definitions. So I created five company columns in my dataframe.
@@ -33,7 +33,14 @@
 
 <img alt="screenshot" src="data_ss.png" />
 
+- Annotation : Supervised NLP machine learning algorithms could be used for these data and instructions. It could give more accurate results. I wanted to solve this way because my time is limited. 
+
 ## PART-2
+
+- I imported the necessary libraries
+- I scrapped the data
+- I converted the data to json format and made a dataframe
+- I loaded excel file, removed sheets to be updated, overwrite the file 
 
 ## Install 
 
