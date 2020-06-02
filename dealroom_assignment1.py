@@ -45,7 +45,7 @@ df["unclassified"]=(~df["mature_company"])&(~df["startsup"])& ( ~df['university'
 
 # updating "TYPE" column
 df["TYPE"]=df[['university','govern_np',"mature_company","startsup","unclassified"] ].idxmax(axis=1)
-
+df_count = df["TYPE"].value_counts()
 # returning original dataframe format
 df = df.drop(['university','govern_np',"mature_company","startsup","unclassified","year"],axis = 1)
 
@@ -61,7 +61,7 @@ with pd.ExcelWriter("Data_Science_Internship_Assignment.xlsx", engine="openpyxl"
     writer.save()
 
 # Plotting bar chart
-df_count = df["TYPE"].value_counts()
+
 print("Amount of companies according to their types:\n",df_count)
 type_list = df["TYPE"].unique()
 plt.title("Amount of companies according to their types")
